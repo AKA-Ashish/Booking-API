@@ -29,6 +29,8 @@ class Booking_controller extends Controller
 
         $response= Http::withHeaders(['Authorization'=>'Bearer '.session()->get('token')])
         ->get('http://127.0.0.1:8000/api/booking/'.$id)->json();
+        
+        // Passing userslogginID
           
 
         if($id == session()->get('id'))
