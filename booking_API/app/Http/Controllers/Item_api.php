@@ -22,6 +22,9 @@ class Item_api extends Controller
     {
         $item_id=DB::table('item')->where('I_id',$id)->get();
         $item=DB::table('item')->get();
+
+
         return $id?$item_id:$item;
     }
+  
 }

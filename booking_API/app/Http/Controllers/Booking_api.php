@@ -25,4 +25,39 @@ class Booking_api extends Controller
         return $id?$booking_id:$booking;
 
     }
+    public function cancel($id){
+        if(isset($id)){
+            
+        $result=DB::table('Booking')
+        ->where('B_id',$id)
+        ->delete();
+        
+    // $result = Booking::find($id)->delete();
+    
+    
+    if($result)
+    {
+        return ["result" => "record has been deleted"];
+    }
+    else {
+        return ["result" => "record has not been deleted"];
+    }
+
+    }
+    else{
+        return ["result" => "id not found"];
+    }
+
+        
+
+
+    }
+   
+
+    
+
+
 }
+
+
+

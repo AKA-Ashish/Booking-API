@@ -26,13 +26,15 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 Route::group(['middleware' => 'auth:sanctum'], function(){
     Route::get('/booking/{id?}',[Booking_api::class,'index']);
+    Route::delete('/cancel/{id}',[Booking_api::class,'cancel']);
+    
 
     Route::get('/catitem/{id?}',[Item_api::class,'index']);
     Route::get('/item/{id?}',[Item_api::class,'Item_id']);
     Route::get('/category/{id?}',[Category_api::class,'index']);
-    Route::post('/addbooking',[Post_booking_api::class,'index']);
+    Route::post('/addbooking',[Post_booking_api::class,'index']); 
     
-    });
+});
 
 Route::post('/login',[UserLogin::class,'index']);
 Route::post('/register',[UserRegistration::class,'index']);
