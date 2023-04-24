@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 
 
+
+
 class Booking_controller extends Controller
 {
     public function show_booking($id)
@@ -32,22 +34,74 @@ class Booking_controller extends Controller
         
         // Passing userslogginID
           
-
+        
         if($id == session()->get('id'))
         {
             
-            return view('mybooking',['info'=>$response]);  
+            return view('mybooking',['info'=>$response]); 
+            
             
         }
+
         return redirect('/404');
         
-        
-
     
     }
 
-    
+    // Cancelling Features
+    public function cancel_booking($id)
+    {
+        $response= Http::withHeaders(['Authorization'=>'Bearer '.session()->get('token')])
+        ->delete('http://127.0.0.1:8000/api/cancel/'.$id)->json();
+
+
+
+        return view('cancel_confirm'); 
+    }
+
+
+
+      
+  
+
+}
+
+
+
+
+  
+
+
+
 
    
-}
+
+
+   
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+  
+
+
+
+   
+
+
+
 

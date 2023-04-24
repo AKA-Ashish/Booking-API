@@ -28,11 +28,28 @@ Route::group(['middleware'=>"session"],function(){
     Route::post('bookconfirm',[Booking_controller::class,'make_booking']);
     
     Route::get('mybooking/{id}',[Booking_controller::class,'personal_booking']);
-    
-    
+
+
+    Route::get('cancel/{id}',[Booking_controller::class,'cancel_booking']);
+
    
+
+
     
+
+    
+
+
+    
+
+
+    
+
   
+
+
+    
+    
     
     
     Route::get("/logout", function () {

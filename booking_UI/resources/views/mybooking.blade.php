@@ -17,8 +17,8 @@
             <th>Closing Time</th>
             <th>Address</th>
             <th>Contact</th>
-            {{-- <th>Booked-On</th> --}}
             <th>Rating</th>
+            <th>Action</th>
             
         
         </tr>
@@ -31,6 +31,11 @@
             <td>{{ $item['I_address'] }}</td>
             <td>{{ $item['I_phone'] }}</td>
             <td>{{ $item['I_rating'] }}</td>
+
+            <td>
+                <a href="{{ url('cancel/'.$item['B_id']) }}">
+             <button class="button_book">Cancel Booking</button></a></td></th>
+            
             
         </tr>
 
@@ -38,7 +43,7 @@
     </table>
     <a href="{{ url('/') }}"><button style="width:100%;">Back</button></a>
     @else
-        <h2 style="width:100%; background-color:rgba(119, 238, 108, 0.318); color:rgb(44, 120, 15); "">No Bookings Yet!!!</h2>
+        <h2 style="width:100%; background-color:rgba(119, 238, 108, 0.318); color:rgb(44, 120, 15); ">No Bookings Yet!!!</h2>
         <div style="text-align:center;"><a href="{{ url('/items') }}"><button style="width:25%; margin:0px;">Make Bookings</button></a></div>
     @endif
 
