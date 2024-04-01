@@ -15,7 +15,7 @@
         <form action="registration" method="POST" enctype="multipart/form-data">
             @csrf
             <label>Name</label><br />
-            <input type="text" placeholder="Name" name="name" value="{{ old('name') }}"/><br />
+            <input type="text" placeholder="Name"  name="name" value="{{ old('name') }}"/><br />
             <span>@error('name')*{{ $message }}@enderror</span><br />
 
             <label>E-mail</label><br />
@@ -33,6 +33,12 @@
         
         </form>
         <a href="login" class="register">Already registered?</a>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
     </div>
     </body>
 </html>
