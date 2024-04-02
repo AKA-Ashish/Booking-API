@@ -32,25 +32,10 @@ Route::group(['middleware'=>"session"],function(){
 
     Route::get('cancel/{id}',[Booking_controller::class,'cancel_booking']);
 
-   
-
-
-    
+    Route::view('admin','admin');
 
     
-
-
-    
-
-
-    
-
   
-
-
-    
-    
-    
     
     Route::get("/logout", function () {
         if(session()->has('name'))
